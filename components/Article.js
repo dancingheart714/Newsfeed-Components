@@ -159,12 +159,10 @@ const articleMaker = article => {
 }
 
 //STEP FOUR: loop over data and append to DOM
-const artDiv = document.querySelector('.artDiv');
+//   data.forEach(item => {
+//   const finalTask =         //can't figure out how to do the loop
 
-data.forEach((obj) => {
-  console.log(`Creating artDiv: ${obj.title}`);
-  artDiv.appendChild(createArtDiv(obj.title, obj.content));
-})
+// });
 
 
 
