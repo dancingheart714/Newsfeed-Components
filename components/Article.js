@@ -114,3 +114,58 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+//STEP 1:  create articleMaker
+const articleMaker = article => {
+
+//define new elements
+  const artDiv = document.createElement('div');
+  const artTitle = document.createElement('h2');
+  const artDate = document.createElement('p')
+  const artContent = document.createElement('p');
+  const artPTwo = document.createElement('p');
+  const artPThree = document.createElement('p');
+  const artSpan = document.createElement('span');
+
+//set up structure of new elements
+  artTitle.append(article.title);
+  artDate.append(article.date);
+  artContent.append(article.firstParagraph);
+  artPTwo.append(article.secondParagraph);
+  artPThree.append(article.thirdParagraph);
+  artSpan.append("+");
+
+//add classes to elements
+  artDiv.classList.add =('article');
+  artDate.classList.add =('date');
+  artSpan.classList.add =('expandButton');
+
+// //set text content
+  artTitle.textContent = article.title;
+  artDate.textContent = article.date;
+  artContent.textContent = article.firstParagraph;
+  artPTwo.textContent = article.secondParagraph;
+  artPThree.textContent = article.thirdParagraph;
+  // artSpan.textContent = span;
+
+//STEP TWO:  addEventListener
+
+  artSpan.addEventListener('click', () => 
+  artDiv.classList.toggle('article-open')
+  );
+
+//STEP THREE: return
+  return artDiv;
+}
+
+//STEP FOUR: loop over data and append to DOM
+const artDiv = document.querySelector('.artDiv');
+
+data.forEach((obj) => {
+  console.log(`Creating artDiv: ${obj.title}`);
+  artDiv.appendChild(createArtDiv(obj.title, obj.content));
+})
+
+
+
+ 
