@@ -44,7 +44,7 @@ let menuItems = [
   array.forEach(item => {
   const li = document.createElement('li');
   ul.appendChild(li);
-  li.textContent = item;
+  li.textContent = item;    //not sure about loop
 
   });
 //Step Three:
@@ -59,7 +59,7 @@ let menuItems = [
 
 //Step Five:
   return menuDiv;
-  
+
 }
 
 //Step Six:

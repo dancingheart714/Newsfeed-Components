@@ -128,17 +128,17 @@ const articleMaker = article => {
   const artSpan = document.createElement('span');
 
 //set up structure of new elements
-  artTitle.append(article.title);
-  artDate.append(article.date);
-  artContent.append(article.firstParagraph);
-  artPTwo.append(article.secondParagraph);
-  artPThree.append(article.thirdParagraph);
-  artSpan.append("+");
+  artDiv.appendChild(artTitle);
+  artDiv.appendChild(artDate);
+  artDiv.appendChild(artContent);
+  artDiv.appendChild(artPTwo);
+  artDiv.appendChild(artPThree);
+  artDiv.appendChild(artSpan);
 
 //add classes to elements
-  artDiv.classList.add =('article');
-  artDate.classList.add =('date');
-  artSpan.classList.add =('expandButton');
+  artDiv.classList.add('article');
+  artDate.classList.add('date');
+  artSpan.classList.add('expandButton');
 
 // //set text content
   artTitle.textContent = article.title;
@@ -146,24 +146,25 @@ const articleMaker = article => {
   artContent.textContent = article.firstParagraph;
   artPTwo.textContent = article.secondParagraph;
   artPThree.textContent = article.thirdParagraph;
-  // artSpan.textContent = span;
+  artSpan.textContent = "click here";
 
 //STEP TWO:  addEventListener
 
   artSpan.addEventListener('click', () => 
   artDiv.classList.toggle('article-open')
   );
-
+console.log(artDate);
 //STEP THREE: return
   return artDiv;
 }
 
 //STEP FOUR: loop over data and append to DOM
-//   data.forEach(item => {
-//   const finalTask =         //can't figure out how to do the loop
 
-// });
+  const finalTask = document.querySelector('.articles');
+  data.forEach(article => {
+  finalTask.append(articleMaker(article))
+  })
 
-
+console.log(finalTask);
 
  
